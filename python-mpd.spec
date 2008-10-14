@@ -4,7 +4,7 @@ Summary:	Python MPD client library.
 Summary(pl.UTF-8):	 Biblioteka klienta MPD dla Pythona
 Name:		python-%{module}
 Version:	0.2.1
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/p/python-mpd/%{name}-%{version}.tar.bz2
