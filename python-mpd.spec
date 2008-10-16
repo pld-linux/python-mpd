@@ -1,10 +1,9 @@
 %define		module	mpd
-
-Summary:	Python MPD client library.
-Summary(pl.UTF-8):	 Biblioteka klienta MPD dla Pythona
+Summary:	Python MPD client library
+Summary(pl.UTF-8):	Biblioteka klienta MPD dla Pythona
 Name:		python-%{module}
 Version:	0.2.1
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/p/python-mpd/%{name}-%{version}.tar.bz2
@@ -20,24 +19,28 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 An MPD (Music Player Daemon) client library written in pure Python.
 
 %description -l pl.UTF-8
-Bilioteka klienta MPD (Music Player Daemon) napisana w czystym Python'ie.
+Bilioteka klienta MPD (Music Player Daemon) napisana w czystym
+Python'ie.
 
 %prep
 %setup -q -n python-mpd-%{version}
 
 %build
-python setup.py build
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-python setup.py install \
+%{__python} setup.py install \
 	--root=$RPM_BUILD_ROOT --optimize=2
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{py_sitescriptdir}/mpd.py
 %{py_sitescriptdir}/mpd.py[co]
-%{py_sitescriptdir}/python_mpd-%{version}-py2.5.egg-info
+%if "%{py_ver}" > "2.4"
+%{py_sitescriptdir}/python_mpd-*.egg-info
+%endif
