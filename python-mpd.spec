@@ -11,6 +11,7 @@ Source0:	http://pypi.python.org/packages/source/p/python-mpd/%{name}-%{version}.
 URL:		http://pypi.python.org/pypi/python-mpd/
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -20,7 +21,7 @@ An MPD (Music Player Daemon) client library written in pure Python.
 
 %description -l pl.UTF-8
 Bilioteka klienta MPD (Music Player Daemon) napisana w czystym
-Python'ie.
+Pythonie.
 
 %prep
 %setup -q -n python-mpd-%{version}
