@@ -9,6 +9,7 @@ Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/p/python-mpd/%{name}-%{version}.tar.bz2
 # Source0-md5:	cfd4b907ba8ef33ff79bd7cbc16b25c0
 URL:		http://jatreuman.indefero.net/p/python-mpd/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python
 BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	rpm-pythonprov
